@@ -1,0 +1,27 @@
+<form>
+  <h1>Register</h1>
+  <span class="p-float-label">
+    <input
+      id="float-input"
+      type="name"
+      pInputText
+      [(ngModel)]="fullname"
+      name="name"
+    />
+    <label for="float-input">name</label>
+  </span>
+  <span class="p-float-label">
+    <input
+      id="float-input"
+      type="email"
+      pInputText
+      [(ngModel)]="email"
+      name="email"
+    />
+    <label for="float-input">Email</label>
+  </span>
+
+  <p-password [(ngModel)]="password" name="password"></p-password>
+
+  <button (click)="register($event)" type="button">Create an account</button>
+</form>

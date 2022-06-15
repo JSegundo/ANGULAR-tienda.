@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Aprendiendo Angular</title>
+</head>
+<body>
+  <!-- string interpolation below -->
+    <!-- <h3>{{title}}</h3>
+    <h2>{{'hola! '.repeat(5)}}</h2> -->
+    <!-- Property Binding  // property values come from 'app.component.ts' -->
+    <!-- <input [type]="typeofinput" />
+    <img [src]="imagen.src" [alt]="imagen.alt"/> -->
+    <!-- EVENT BINDING  -->
+    <!-- <button [disabled]="btnDisabled">Enviar</button>
+    <button (click)="toggleButton()">Toggle button</button> -->
+<!--
+    <div class="box" (scroll)="onScroll($event)">
+      <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Natus molestias harum quos accusamus modi sunt ea magnam voluptate culpa, quod nulla voluptas exercitationem vel, ab molestiae. Unde eveniet ut inventore?</p>
+    </div> -->
+
+    <!-- <h3>mi nombre es {{minombre}}</h3> -->
+    <!-- <input type="text" [value]="minombre" (keyup)="onkeyup($event)"/> -->
+
+    <!-- Data [(binding)] => fusion entre los dos anteriores Ngmodel-->
+    <!-- <input type="text" required [(ngModel)]="minombre">
+    <p>mi nombre es {{minombre}}</p> -->
+    <!-- nfIf -->
+
+    <!-- <div [ngSwitch]="minombre">
+      <p *ngSwitchCase="'segundo'">Soy Segundo</p>
+      <p *ngSwitchCase="'mariano'">Soy Mariano</p>
+      <p *ngSwitchCase="'messi'">Soy Messi</p>
+      <p *ngSwitchDefault> el switch no hace match</p>
+    </div> -->
+
+
+    <!-- <input type="text" [(ngModel)]="newEmoji" />
+    <button (click)="addEmoji()">add Emoji</button>
+<h2>*ngFor</h2>
+    <ul>
+      <li *ngFor="let emoji of emojis; index as i ">
+        {{i}}{{emoji}}
+        <button (click)="eliminarEmoji(i)">Eliminar</button>
+      </li>
+    </ul> -->
+
+<h2>*nfFor Objects</h2>
+  <div class="productsContainer">
+    <div *ngFor="let product of products" class="product">
+      <h3>{{product.name}}</h3>
+        <img [src]="product.image"/>
+        <p>${{product.price}}</p>
+    </div>
+  </div>
+
+  <h1>Form</h1>
+  <form (ngSubmit)="onRegister()" #myForm="ngForm">
+    <div class="input-group">
+      <label for="name">Nombre</label>
+      <input type="text" id="name" name="name" [(ngModel)]="userRegister.name" required/>
+    <p *ngIf="" class="error">{{inputError}}
+    </p>
+    </div>
+    <div class="input-group">
+      <label for="email">Email</label>
+      <input type="email" id="email" name="email" [(ngModel)]="userRegister.email" required/>
+    <p>mensajes de error</p>
+    </div>
+    <div class="input-group">
+      <label for="password">Password</label>
+      <input type="password" id="password" name="password" [(ngModel)]="userRegister.password" required/>
+    <p>mensajes de error</p>
+    </div>
+    <button type="submit" [disabled]="myForm.invalid" >Register</button>
+  </form>
+</body>
+</html>

@@ -1,0 +1,62 @@
+<header class="show-mobile">
+  <div>
+    <button (click)="toggleShowMenu()" style="cursor: pointer">
+      <img src="./assets/svg/icon_menu.svg" alt="menu" />
+    </button>
+    <a href="">
+      <img src="./assets/svg/logo_yard_sale.svg" alt="logo" />
+    </a>
+    <a href="">
+      <img src="./assets/svg/icon_shopping_cart.svg" alt="logo" />
+      <span class="counter">{{ counter }}</span>
+    </a>
+  </div>
+  <div class="side-menu" [class.active]="showMenu">
+    <button (click)="toggleShowMenu()" style="cursor: pointer">X</button>
+    <ul>
+      <li><a routerLink="/" routerLinkActive="active">All</a></li>
+      <li *ngFor="let item of categoriesNav">
+        <a [routerLink]="['/category', item.route]" routerLinkActive="active">{{
+          item.name
+        }}</a>
+      </li>
+    </ul>
+  </div>
+</header>
+<div class="hide-mobile">
+  <div>
+    <nav>
+      <a class="logo" href="">
+        <img src="./assets/svg/logo_yard_sale.svg" alt="logo" />
+      </a>
+      <ul>
+        <li><a routerLink="">All</a></li>
+
+        <li *ngFor="let item of categoriesNav">
+          <a
+            [routerLink]="['/category', item.route]"
+            routerLinkActive="active"
+            >{{ item.name }}</a
+          >
+        </li>
+      </ul>
+    </nav>
+    <div class="info">
+      <a *ngIf="!usertoken; else elseBlock" routerLink="login" class="account"
+        >Login</a
+      >
+      <ng-template #elseBlock>
+        <a routerLink="/profile" class="account">
+          {{ userData.fullname }}'s profile</a
+        >
+      </ng-template>
+      <div>
+        <a href="">
+          <img src="./assets/svg/icon_shopping_cart.svg" alt="logo" />
+        </a>
+        <span class="counter">{{ counter }}</span>
+      </div>
+    </div>
+  </div>
+</div>
+<!-- <p>{{ usertoken }}</p> -->

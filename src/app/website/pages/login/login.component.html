@@ -1,0 +1,20 @@
+<form>
+  <h1>Login</h1>
+
+  <span class="p-float-label">
+    <input
+      id="float-input"
+      type="email"
+      pInputText
+      [(ngModel)]="useremail"
+      name="email"
+    />
+    <label for="float-input">Email</label>
+  </span>
+
+  <p-password [(ngModel)]="password" name="password"></p-password>
+
+  <button (click)="login($event)" type="button">log in</button>
+  <button (click)="getProfile()" type="button">get profile (jwt)</button>
+</form>
+<p>No tenes cuenta? <a routerLink="/register">Registrate</a></p>

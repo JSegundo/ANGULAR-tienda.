@@ -1,0 +1,18 @@
+<article class="product-wrapper">
+  <a [routerLink]="['/product', product._id]">
+    <app-img
+      *ngIf="product.image"
+      [img]="product.image"
+      alt="product"
+      (click)="getInfoProduct()"
+      style="cursor: pointer"
+    ></app-img>
+    <p>{{ product.title }}</p>
+    <section>
+      <h2>{{ product.price | currency: "USD $" }}</h2>
+      <button (click)="onAddToCart()" style="cursor: pointer">
+        Add to cart
+      </button>
+    </section>
+  </a>
+</article>

@@ -1,0 +1,35 @@
+.product-wrapper {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  width: fit-content;
+  width: 230px;
+  margin-bottom: 10px;
+  border-bottom: 2px solid grey;
+  padding: 10px;
+
+  height: 300px;
+
+  p,
+  h2 {
+    margin: 0;
+  }
+
+  h2 {
+    font-weight: bold;
+    font-size: 80%;
+  }
+  p {
+    font-size: 80%;
+  }
+
+  section {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-top: 10px;
+  }
+  button {
+    border-radius: 7px;
+  }
+}

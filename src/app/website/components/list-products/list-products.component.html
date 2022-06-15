@@ -1,0 +1,20 @@
+<div class="products-grid">
+  <app-product
+    [product]="product"
+    *ngFor="let product of products"
+    (addedProductToCart)="onAddedProductToShoppingCart($event)"
+    (showProductDetail)="getProductDetail($event)"
+  ></app-product>
+</div>
+<button class="loadmore" (click)="onLoadMore()" [disabled]="loadmoredisabled">
+  Load more
+</button>
+
+<ng-template #otro>Cargando...</ng-template>
+
+<!-- <p>{{ ShoppingCart.length }}</p>
+<p>${{ totalPrice }}</p>
+<p>{{ today | timeAgo }}</p>
+<p>{{ today | date: "short" }}</p>
+<p>{{ date }}</p>
+<p>{{ "asdasd" | uppercase }}</p> -->

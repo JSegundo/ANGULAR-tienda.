@@ -1,0 +1,13 @@
+<div class="page-product">
+  <button (click)="goToBack()">Back</button>
+  <div class="detail" *ngIf="productDetail">
+    <div class="gallery">
+      <img [src]="productDetail.image" alt="img" />
+    </div>
+    <div class="info">
+      <h1>{{ productDetail?.title }}</h1>
+      <h2>{{ productDetail?.price | currency }}</h2>
+      <p>{{ productDetail?.description }}</p>
+    </div>
+  </div>
+</div>
