@@ -1,4 +1,5 @@
 # MiTiendaNg
+![Screenshot from 2022-06-15 10-27-26](https://user-images.githubusercontent.com/87492687/173838811-bc2895b8-c93c-427f-bd13-88378a15d951.png)
 
 This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 13.3.6.
 
